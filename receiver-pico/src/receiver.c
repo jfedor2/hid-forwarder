@@ -372,6 +372,10 @@ int main(void) {
 #endif
     tusb_init();
 
+#if (defined(NETWORK_ENABLED) || defined(BLUETOOTH_ENABLED))
+    bool prev_led_state = false;
+#endif
+
     while (true) {
         tud_task();
 #if (defined(NETWORK_ENABLED) || defined(BLUETOOTH_ENABLED))
@@ -393,7 +397,10 @@ int main(void) {
         }
 #endif
 #if (defined(NETWORK_ENABLED) || defined(BLUETOOTH_ENABLED))
-        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led_on);
+        if (prev_led_state != led_on) {
+            cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led_on);
+            prev_led_state = led_on;
+        }
 #endif
         serial_task();
         if ((or_items > 0) && (tud_hid_n_ready(0))) {
