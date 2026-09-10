@@ -5,8 +5,10 @@ on:
 jobs:
   build-receiver-pico:
     uses: ./.github/workflows/build-receiver-pico.yml
+  build-sdl-transmitter:
+    uses: ./.github/workflows/build-sdl-transmitter.yml
   create-release:
-    needs: build-receiver-pico
+    needs: [ build-receiver-pico, build-sdl-transmitter ]
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/download-artifact@v4

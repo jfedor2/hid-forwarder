@@ -1,3 +1,15 @@
 [submodule "pico-sdk"]
 	path = receiver-pico/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "transmitter-sdl/external/imgui"]
+	path = transmitter-sdl/external/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "transmitter-sdl/external/json"]
+	path = transmitter-sdl/external/json
+	url = https://github.com/nlohmann/json.git
+[submodule "transmitter-sdl/external/hidapi"]
+	path = transmitter-sdl/external/hidapi
+	url = https://github.com/libusb/hidapi.git
+[submodule "transmitter-sdl/external/SDL"]
+	path = transmitter-sdl/external/SDL
+	url = https://github.com/libsdl-org/SDL.git

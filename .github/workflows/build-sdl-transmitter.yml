@@ -1,0 +1,25 @@
+name: build-sdl-transmitter
+
+on:
+  push:
+    paths:
+      - 'transmitter-sdl/**'
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: transmitter-sdl
+    steps:
+    - uses: actions/checkout@v6
+      with:
+        submodules: true
+    - run: cmake -B build
+    - run: cmake --build build --config Release
+    - uses: actions/upload-artifact@v7
+      with:
+        name: sdl-transmitter
+        path: transmitter-sdl/build/Release/sdl-transmitter.exe

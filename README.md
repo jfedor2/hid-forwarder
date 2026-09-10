@@ -56,6 +56,10 @@ A few sample transmitters are provided. Some of them generate synthetic inputs a
 
 If during testing you connect the receiver to the same PC that's running the transmitter, and you're using one of the transmitters that forward inputs from all connected gamepads, you might run into the infinite mirror/loop issue. The transmitters make an attempt to avoid it using the device name. Your mileage may vary.
 
+### SDL Transmitter
+
+This is a Windows C++ application that reads inputs from all connected controllers, merges them into one virtual controller and sends them to the receiver. It lets you individually enable/disable each controller and remap its buttons and axes. It supports wired, Bluetooth and networked modes of communication with the receiver.
+
 ### Web transmitter
 
 This is a web application, you can see a live version of it [here](https://www.jfedor.org/hid-transmitter/). It is compatible with the wired and Bluetooth modes of communication to the receiver. Click the "Select serial port" button, choose the port corresponding to your USB-to-serial adapter or your Bluetooth serial connection and then it should forward the inputs from any connected gamepads to the receiver.
