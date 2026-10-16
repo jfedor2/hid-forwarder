@@ -58,7 +58,9 @@ If during testing you connect the receiver to the same PC that's running the tra
 
 ### SDL Transmitter
 
-This is a Windows C++ application that reads inputs from all connected controllers, merges them into one virtual controller and sends them to the receiver. It lets you individually enable/disable each controller and remap its buttons and axes. It supports wired, Bluetooth and networked modes of communication with the receiver.
+This is a Windows C++ application that reads inputs from all connected controllers, merges them into one virtual controller and sends them to the receiver. It lets you individually enable/disable each controller and remap its buttons and axes. It supports wired, Bluetooth and networked modes of communication with the receiver. Can also act as a receiver itself, letting you combine multiple transmitters into one and create more complex setups.
+
+Available in a [separate repository](https://github.com/jfedor2/hid-router).
 
 ### Web transmitter
 
